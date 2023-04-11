@@ -9,16 +9,13 @@ class CustomListViewItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 2.7 / 4,
       child: Container(
-     
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-         
+          borderRadius: BorderRadius.circular(16),
           image: const DecorationImage(
-            image: AssetImage(
-              AssetData.testImage,
-            ),
-            fit: BoxFit.fill
-          ),
+              image: AssetImage(
+                AssetData.testImage,
+              ),
+              fit: BoxFit.fill),
         ),
       ),
     );

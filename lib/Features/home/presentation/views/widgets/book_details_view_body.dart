@@ -37,7 +37,7 @@ class BookDetailsViewBody extends StatelessWidget {
             style: Styles.textStyle18.copyWith(fontStyle: FontStyle.italic),
           )),
           const SizedBox(
-            height: 12,
+            height: 18,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

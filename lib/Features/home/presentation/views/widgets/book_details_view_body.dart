@@ -13,7 +13,8 @@ class BookDetailsViewBody extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
+        SliverFillRemaining(
+          hasScrollBody: false,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
@@ -52,9 +53,28 @@ class BookDetailsViewBody extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 40,
                 ),
-                const BooksAction()
+                const BooksAction(),
+                const Expanded(
+                  child:  SizedBox(
+                    height: 50,
+                  ),
+                ),
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'You can also like',
+                    style: Styles.textStyle14,
+                  ),
+                ),
+                  const SizedBox(
+                  height: 16,
+                ),
+                const SimilarBooksListView(),
+                 const SizedBox(
+                  height: 40,
+                ),
               ],
             ),
           ),
@@ -65,5 +85,24 @@ class BookDetailsViewBody extends StatelessWidget {
 }
 
 
+class SimilarBooksListView extends StatelessWidget {
+  const SimilarBooksListView({super.key});
 
-
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.15,
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: 5,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: CustomBookImage(),
+          );
+        },
+      ),
+    );
+  }
+}
